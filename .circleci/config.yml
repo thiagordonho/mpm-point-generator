@@ -15,8 +15,7 @@ jobs:
             cd build
             cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DCMAKE_EXPORT_COMPILE_COMMANDS=On ..
             make -j8
-            ./mpm_point_generator_unit_test [2D]
-            #ctest -VV
+            ctest -VV
       # Clang 3.9
       - run:
           name: Clang-3.9 build
@@ -26,8 +25,7 @@ jobs:
             cd build
             cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_EXPORT_COMPILE_COMMANDS=On ..
             make -j8
-            ./mpm_point_generator_unit_test [2D]
-            #ctest -VV
+            ctest -VV
       # cppcheck
       - run:
           name: cppcheck
